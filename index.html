@@ -21,13 +21,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-
+    
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
     <title>Choo Choo Schedule</title>
   </head>
@@ -54,7 +52,7 @@
         </div>
         <div class="card-body">
                 <div class="table-responsive">
-                        <table class="table">
+                        <table id="database-list" class="table">
                         <thead>
                           <tr>
                             <th scope="col" class="card-hd-style">Train Name</th>
@@ -84,46 +82,47 @@
             <div class="form-group">
               <label for="formGroupExampleInput" class="card-hd-style">Enter Train Name</label>
               <input
-                type="text"
                 class="form-control"
                 id="train-name"
+                type="text"
                 placeholder="Enter Train Name"
               />
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput2" class="card-hd-style">Destination</label>
               <input
-                type="text"
                 class="form-control"
                 id="destination"
+                type="text"
                 placeholder="Enter Destination"
               />
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput" class="card-hd-style">First Train Time (HH:mm Military Time)</label>
               <input
-                type="text"
                 class="form-control"
                 id="train-time"
+                type="number"
                 placeholder="Enter Time"
               />
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput2" class="card-hd-style">Frequency</label>
+              <label for="formGroupExampleInput2" class="card-hd-style">Frequency (Min)</label>
               <input
-                type="text"
                 class="form-control"
                 id="frequency"
+                type="number"
                 placeholder="Enter Frquency"
               />
             </div>
-            <button class="btn btn-outline-dark" id="submit" type="submit">Submit form</button>
+            <button class="btn btn-outline-dark" id="add-train-btn">Submit form</button>
           </form>
         </div>
       </div>
       <!--Add to schedule End-->
     </div>
     <!--Javascript files go here-->
+    
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
