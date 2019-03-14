@@ -23,6 +23,7 @@ $("#add-train-btn").on("click", function(event){
     var train = $("#train-name").val().trim();
     var destination = $("#destination").val().trim();
     var time = moment($("#train-time").val().trim(), "HH:MM").format("HH:MM");
+    //var time = $("#train-time").val().trim();
     var minutes = $("#frequency").val().trim();
 
     var newTrain = {
@@ -43,7 +44,7 @@ $("#add-train-btn").on("click", function(event){
 
     $("#train-name").val("");
     $("#destination").val("");
-    //$("#train-time").val("");
+    $("#train-time").val("");
     $("#frequency").val("");
 });
 
